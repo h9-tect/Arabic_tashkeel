@@ -25,7 +25,7 @@ def predict_harakat(input_text):
     return final_output
 
 def main():
-    st.title("Arabic Text Harakat Prediction")
+    st.title("تشكيل الكلمات العربية")
     
     input_text = st.text_area("Enter your Arabic text:")
     
