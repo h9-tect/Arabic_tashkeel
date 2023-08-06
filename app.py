@@ -7,14 +7,12 @@ def tashkeel_app(text):
     return tashkeeled_text
 
 def main():
-    st.title("Tashkeel App")
-    st.write("This app adds Tashkeel (Arabic diacritics) to the given text.")
+    st.title("تطبيق تشكيل الكلمات العربية")
+    st.write("هذا التطبيق يقوم بتشكيل الكلمات العربية ")
 
     tashkeel_input = st.text_area("Enter your text for Tashkeel:")
 
-    if st.button("Add Tashkeel", key="tashkeel_button", 
-                 help="Click to add Tashkeel to the text",
-                 style={"background-color": "#008CBA", "color": "white", "font-size": "16px"}):
+    if st.button("شَكَّلَهَا"):
         if tashkeel_input:
             tashkeeled_text = tashkeel_app(tashkeel_input)
             st.write("Tashkeeled Text:")
