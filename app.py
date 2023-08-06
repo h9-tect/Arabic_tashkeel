@@ -18,7 +18,7 @@ def main():
             st.write("Tashkeeled Text:")
             st.write(tashkeeled_text)
         else:
-            st.warning("Please enter some text for Tashkeel.")
+            st.warning("لم تقم بوضع أي نص ")
 
 if __name__ == "__main__":
     main()
