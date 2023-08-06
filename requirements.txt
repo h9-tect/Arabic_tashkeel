@@ -1,3 +1,2 @@
 mishkal
-spellchecker
-indexer
+ghalatawi
