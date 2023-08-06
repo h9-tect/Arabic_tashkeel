@@ -1,41 +1,24 @@
-import os
 import streamlit as st
-from Shakkala import Shakkala
+import mishkal.tashkeel
 
-# create Shakkala object
-sh = Shakkala('./', version=3)
-
-# load the model
-model, graph = sh.get_model()
-
-def predict_harakat(input_text):
-    # prepare input
-    input_int = sh.prepare_input(input_text)
-
-    # run the model
-    with graph.as_default():
-        logits = model.predict(input_int)[0]
-
-    # get the logits
-    predicted_harakat = sh.logits_to_text(logits)
-
-    # final output
-    final_output = sh.get_final_text(input_text, predicted_harakat)
-    
-    return final_output
+def tashkeel_app(text):
+    vocalizer = mishkal.tashkeel.TashkeelClass()
+    tashkeeled_text = vocalizer.tashkeel(text)
+    return tashkeeled_text
 
 def main():
-    st.title("تشكيل الكلمات العربية")
-    
-    input_text = st.text_area("Enter your Arabic text:")
-    
-    if st.button("Predict"):
-        if input_text:
-            result = predict_harakat(input_text)
-            st.markdown("## Predicted Text:")
-            st.write(result)
+    st.title("Tashkeel App")
+    st.write("This app adds Tashkeel (Arabic diacritics) to the given text.")
+
+    text_input = st.text_area("Enter your text:")
+
+    if st.button("Add Tashkeel"):
+        if text_input:
+            tashkeeled_text = tashkeel_app(text_input)
+            st.write("Tashkeeled Text:")
+            st.write(tashkeeled_text)
         else:
-            st.warning("Please enter some Arabic text to predict harakat.")
+            st.warning("Please enter some text.")
 
 if __name__ == "__main__":
     main()
