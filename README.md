@@ -1,7 +1,7 @@
 # Arabic_tashkeel
 # Tashkeel App - Arabic Text Tashkeel and Pronunciation Aid
 
-![Tashkeel App](https://example.com/path/to/app_screenshot.png)
+![Tashkeel App](app.PNG)
 
 ## Description
 
