@@ -10,7 +10,7 @@ def main():
     st.title("تطبيق تشكيل الكلمات العربية")
     st.write("هذا التطبيق يقوم بتشكيل الكلمات العربية ")
 
-    tashkeel_input = st.text_area("Enter your text for Tashkeel:")
+    tashkeel_input = st.text_area("قم بوضع النص في المربع أدناه:")
 
     if st.button("شَكَّلَهَا"):
         if tashkeel_input:
